@@ -1,10 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import SearchList from './searchList';
 
 export default class Search extends Component {
   render() {
     return (
       <div>
-        Search Page
+
+        <SearchList/>
       </div>
     )
   }

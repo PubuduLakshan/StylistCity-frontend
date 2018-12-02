@@ -20,7 +20,7 @@ export default class stylistProfView extends Component {
                     <div className="desc">Tech geek</div>
                 </div>
                 <div className="bottom">
-                    <Button bsStyle = "primary">Book Now!</Button>
+                    <Button bsStyle = "default">Book Now!</Button>
                 </div>
                 
             </div>

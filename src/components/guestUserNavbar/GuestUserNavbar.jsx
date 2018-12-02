@@ -8,7 +8,7 @@ export default class GuestUserNavbar extends Component {
  
   render() {
     return (
-        <Navbar default collapseOnSelect>
+        <Navbar inverse collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
             <Link to="/">StylistCity</Link>

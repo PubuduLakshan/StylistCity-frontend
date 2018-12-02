@@ -53,7 +53,7 @@ export default class Home extends Component {
               <DatePickerFeild bsStyle = "primary" onChange={this.handleChange}/><span style={{marginLeft:20}}></span>
             </FormGroup>
            
-            <Button type="submit" bsStyle="default">Search Now</Button>
+            <Button type="submit" bsStyle="default" href="../search/Search.jsx">Search Now</Button>
           </Form>
         </div>
       </Grid>
