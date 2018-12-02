@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import {Jumbotron,Grid,Image,Form,FormGroup,Button,FormControl} from "react-bootstrap";
 import StylistBar from "./stylistBar";
 import DatePickerFeild from "./datePicker";
-import "./Home.css";
+import "./home.css";
 
 
 export default class Home extends Component {
@@ -61,11 +61,10 @@ export default class Home extends Component {
       
       <StylistBar/>
 
-      <Jumbotron className="howitworks">
+      <div>
         <h2 className="howitworkshead">How it Works</h2>
         <hr />
-      </Jumbotron>
-      
+      </div>
       </div>
     )
   }

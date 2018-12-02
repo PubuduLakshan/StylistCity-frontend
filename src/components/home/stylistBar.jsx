@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {Jumbotron,Grid,Row,Col} from 'react-bootstrap';
-import StylistProfCard from "../stylistProfCard/stylistProfCard";
+import {Grid,Row,Col} from 'react-bootstrap';
+import StylistProfCard from "./stylistProfCard";
 import "./stylistBar.css";
 
 export default class StylistBar extends Component {
@@ -8,7 +8,7 @@ export default class StylistBar extends Component {
     return (
       <div className="stylistbar">
         
-        <Jumbotron fluid ="true" className="jumboStylebar" >
+       
         <h2 className="membertitle">Members</h2>
         <hr />
           <Grid>
@@ -27,7 +27,7 @@ export default class StylistBar extends Component {
             </Col>
           </Row>
           </Grid>
-        </Jumbotron>
+       
         
       </div>
     )
