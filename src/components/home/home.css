@@ -9,12 +9,22 @@
     
 }
 .subwelcome{
-    text-align: center
+    text-align: center;
+    
 }
-.jumbotron{
+.searchForm{
+    margin-top: 80px;
+    
+}
+
+.searchinstruction{
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+.jumboHome{
+    position: relative;
     margin-top: -420px;
-    color: white;
-}
-.dropdownButton{
-    color: transparent;
+    color:black;
+    background-color: white;
+    opacity: 0.45;
 }

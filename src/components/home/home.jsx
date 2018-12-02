@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 //import { Link } from "react-router-dom";
-import {Jumbotron,Grid,Image,MenuItem,Row,Col,Button,SplitButton } from "react-bootstrap";
+import {Jumbotron,Grid,Image,Form,FormGroup,Button,FormControl} from "react-bootstrap";
+import StylistBar from "./stylistBar";
+
 import "./Home.css";
 
 
@@ -10,60 +12,58 @@ export default class Home extends Component {
       <div>
         
         <Image src = "assets/home/homeImg1.jpg" className="img-fluid" alt="Responsive image"/>
-        
      
       <Grid>
       
-        <Jumbotron fluid>
-          
+        <Jumbotron className="jumboHome">
+        <div className="welcomehead">
           <h1 className="welcome">Welcome to Stylist City</h1>
           <h3 className="subwelcome">Best Place-Best Stylist</h3>
-         
+        </div>
         </Jumbotron>
         
-        <Row className="show-grid" pullRight>
-          <Col xs={4} md={2}>
-          <SplitButton title="Dropdown right" pullRight id="split-button-pull-right">
-            <MenuItem eventKey="1">Action</MenuItem>
-            <MenuItem eventKey="2">Another action</MenuItem>
-            <MenuItem eventKey="3">Something else here</MenuItem>
-            <MenuItem divider />
-            <MenuItem eventKey="4">Separated link</MenuItem>
-          </SplitButton>
-          </Col>
-          <Col xs={4} md={2}>
-          <SplitButton title="Dropdown right" pullRight id="split-button-pull-right">
-            <MenuItem eventKey="1">Action</MenuItem>
-            <MenuItem eventKey="2">Another action</MenuItem>
-            <MenuItem eventKey="3">Something else here</MenuItem>
-            <MenuItem divider />
-            <MenuItem eventKey="4">Separated link</MenuItem>
-          </SplitButton>
-          </Col>
-          <Col xs={4} md={2}>
-          <SplitButton title="Dropdown right" pullRight id="split-button-pull-right">
-            <MenuItem eventKey="1">Action</MenuItem>
-            <MenuItem eventKey="2">Another action</MenuItem>
-            <MenuItem eventKey="3">Something else here</MenuItem>
-            <MenuItem divider />
-            <MenuItem eventKey="4">Separated link</MenuItem>
-          </SplitButton>
-          </Col>
-          <Col xs={4} md={2}>
-          <SplitButton title="Dropdown right" pullRight id="split-button-pull-right">
-            <MenuItem eventKey="1">Action</MenuItem>
-            <MenuItem eventKey="2">Another action</MenuItem>
-            <MenuItem eventKey="3">Something else here</MenuItem>
-            <MenuItem divider />
-            <MenuItem eventKey="4">Separated link</MenuItem>
-          </SplitButton>
-          </Col>
-          <Col xsHidden md={2}>
-            <Button>Default</Button>
-          </Col>
-        </Row>
-        
+        <div className="searchForm">
+        <h3 className="searchinstruction">Search Here</h3>
+          <Form inline>
+            <FormGroup controlId="formInlinecategory" style={{marginLeft:20}}>       
+                <FormControl  style ={{width:230}} componentClass="select" placeholder="Category">
+                  <option>Category</option>
+                  <option value="stylist">Stylist</option>
+                  <option value="educator">Educator</option>
+                </FormControl><span style={{marginLeft:20}}></span>
+            </FormGroup>
+
+            <FormGroup controlId="formInlinelocation">
+                <FormControl  style ={{width:230}}componentClass="select" placeholder="Location">
+                  <option>Location</option>
+                  <option value="stylist">Stylist</option>
+                  <option value="educator">Educator</option>
+                </FormControl><span style={{marginLeft:20}}></span>
+            </FormGroup>
+
+            <FormGroup controlId="formInlineGender">          
+                <FormControl  style ={{width:230}}componentClass="select" placeholder="Gender">
+                  <option>Gender</option>
+                  <option value="select">select</option>
+                  <option value="other">...</option>
+                </FormControl><span style={{marginLeft:20}}></span>
+            </FormGroup>
+
+            <FormGroup controlId="formInlineDate">      
+                <FormControl style ={{width:230}}componentClass="select" placeholder="Date">
+                  <option value="select">select</option>
+                  <option value="other">...</option>
+                </FormControl><span style={{marginLeft:20}}></span>
+            </FormGroup>
+           
+            <Button type="submit" bsStyle="default">Search Now</Button>
+          </Form>
+        </div>
       </Grid>
+      
+      
+      <StylistBar/>
+      
       </div>
     )
   }
