@@ -8,7 +8,7 @@ export default class StylistBar extends Component {
     return (
       <div className="stylistbar">
         
-        <Jumbotron fluid >
+        <Jumbotron fluid ="true" >
         <h3 className="membertitle">Members</h3>
         <hr />
           <Grid>

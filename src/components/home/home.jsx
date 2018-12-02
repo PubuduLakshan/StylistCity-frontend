@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 //import { Link } from "react-router-dom";
 import {Jumbotron,Grid,Image,Form,FormGroup,Button,FormControl} from "react-bootstrap";
 import StylistBar from "./stylistBar";
-
+import DatePickerFeild from "./datePicker";
 import "./Home.css";
 
 
@@ -50,10 +50,7 @@ export default class Home extends Component {
             </FormGroup>
 
             <FormGroup controlId="formInlineDate">      
-                <FormControl style ={{width:230}}componentClass="select" placeholder="Date">
-                  <option value="select">select</option>
-                  <option value="other">...</option>
-                </FormControl><span style={{marginLeft:20}}></span>
+              <DatePickerFeild onChange={this.handleChange}/><span style={{marginLeft:20}}></span>
             </FormGroup>
            
             <Button type="submit" bsStyle="default">Search Now</Button>
