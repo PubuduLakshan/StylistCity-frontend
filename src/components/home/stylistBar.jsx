@@ -8,8 +8,8 @@ export default class StylistBar extends Component {
     return (
       <div className="stylistbar">
         
-        <Jumbotron fluid ="true" >
-        <h3 className="membertitle">Members</h3>
+        <Jumbotron fluid ="true" className="jumboStylebar" >
+        <h2 className="membertitle">Members</h2>
         <hr />
           <Grid>
           <Row className="show-grid">

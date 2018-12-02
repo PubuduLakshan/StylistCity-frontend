@@ -50,7 +50,7 @@ export default class Home extends Component {
             </FormGroup>
 
             <FormGroup controlId="formInlineDate">      
-              <DatePickerFeild onChange={this.handleChange}/><span style={{marginLeft:20}}></span>
+              <DatePickerFeild bsStyle = "primary" onChange={this.handleChange}/><span style={{marginLeft:20}}></span>
             </FormGroup>
            
             <Button type="submit" bsStyle="default">Search Now</Button>
@@ -60,6 +60,11 @@ export default class Home extends Component {
       
       
       <StylistBar/>
+
+      <Jumbotron className="howitworks">
+        <h2 className="howitworkshead">How it Works</h2>
+        <hr />
+      </Jumbotron>
       
       </div>
     )

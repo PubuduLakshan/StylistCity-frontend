@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Image} from 'react-bootstrap';
+import {Image,Button} from 'react-bootstrap';
 import "./stylistProfCard.css";
 export default class stylistProfView extends Component {
   render() {
@@ -13,11 +13,14 @@ export default class stylistProfView extends Component {
                 </div>
                 <div className="info">
                     <div className="title">
-                        <h3>Script Eden</h3>
+                        <h3>Mohommad Salah</h3>
                     </div>
-                    <div className="desc">Passionate designer</div>
+                    <div className="desc">Stylist</div>
                     <div className="desc">Curious developer</div>
                     <div className="desc">Tech geek</div>
+                </div>
+                <div className="bottom">
+                    <Button bsStyle = "primary">Book Now!</Button>
                 </div>
                 
             </div>
