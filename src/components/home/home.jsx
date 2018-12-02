@@ -64,6 +64,7 @@ export default class Home extends Component {
       <div>
         <h2 className="howitworkshead">How it Works</h2>
         <hr />
+        
       </div>
       </div>
     )
