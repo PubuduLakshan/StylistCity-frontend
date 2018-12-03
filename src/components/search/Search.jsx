@@ -15,7 +15,7 @@ export default class Search extends Component {
     const searchedObj = this.props.location.state.redirectParams;
     console.log(searchedObj);
 
-    axios.post('node server endpoint', {
+    axios.post('http://localhost:8000/search', {
     searchedObj: searchedObj 
     })
     .then(function (response) {
