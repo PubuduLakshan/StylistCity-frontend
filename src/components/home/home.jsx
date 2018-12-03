@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import { Link } from "react-router-dom";
-import {Jumbotron,Grid,Image,Form,FormGroup,Button,FormControl} from "react-bootstrap";
+import {Jumbotron,Grid,Image,Form,FormGroup,Button, FormControl } from "react-bootstrap";
 import StylistBar from "./stylistBar";
 import DatePickerFeild from "./datePicker";
 import {Redirect} from 'react-router-dom';
@@ -12,9 +12,15 @@ export default class Home extends Component {
   constructor(){
     super()
     this.state = {
-      redirectParams: undefined
+      redirectParams: {},
+      isSubmitClicked: false
     }
   }
+  testSubmit(){
+    this.setState({isSubmitClicked: true})
+  }
+
+
 
   /*searchHome(e){
     e.preventDefault();
@@ -22,36 +28,40 @@ export default class Home extends Component {
     const category = this.refs.category;
     console.log(category);
   }*/
-  /*constructor(props) {
-    super(props);
-    this.state = {value: 'category'};
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+/*
+  constructor(props) {
+    super(props);
+    this.state = {redirectParams: undefined;
+
+    //this.handleChange = this.handleChange.bind(this);
+    //this.handleSubmit = this.handleSubmit.bind(this);
   }
+  
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({{category: event.target.value}});
   }
 
   handleSubmit(event) {
-    alert('Your favorite flavor is: ' + this.state.value);
+   // alert('Your favorite flavor is: ' + this.state.value);
+
     event.preventDefault();
 
-    return <Route  />
-  }
-*/
+  }*/
 
-testSubmit(){
-  console.log('x')
-  this.setState({redirectParams: 'x'})
-}
+  handleChange(searchType,e){
+    this.setState({redirectParams: {...this.state.redirectParams, [searchType] : e.target.value }} )
+  }
+
+
+
 
   render() {
 
-    if(this.state.redirectParams){
+    if(this.state.isSubmitClicked){
       return <Redirect to={{
         pathname: "/search",
-        state: { params: this.state.redirectParams }
+        state: { redirectParams: this.state.redirectParams }
       }}
       />
     } else
@@ -72,28 +82,28 @@ testSubmit(){
         <div className="searchForm">
         <h3 className="searchinstruction">Search Here</h3>
           <Form inline>
-            <FormGroup controlId="formInlinecategory" style={{marginLeft:20}}>       
-                <FormControl  style ={{width:230}} componentClass="select" placeholder="Category">
-                  <option value = "category">Category</option>
+            <FormGroup controlId="formcategory" style={{marginLeft:20}} >       
+                <FormControl   style ={{width:230}} componentClass="select" placeholder="Category" onChange={this.handleChange.bind(this,'category')}>
+                  <option value ="category">Category</option>
                   <option value="stylist">Stylist</option>
                   <option value="educator">Educator</option>
-                </FormControl><span style={{marginLeft:20}}></span>
+                </FormControl ><span style={{marginLeft:20}}></span>
             </FormGroup>
 
-            <FormGroup controlId="formInlinelocation">
-                <FormControl  style ={{width:230}}componentClass="select" placeholder="Location">
+            <FormGroup controlId="formlocation">
+                <FormControl   style ={{width:230}}componentClass="select" placeholder="Location" onChange={this.handleChange.bind(this,'location')}>
                   <option>Location</option>
                   <option value="stylist">Stylist</option>
                   <option value="educator">Educator</option>
-                </FormControl><span style={{marginLeft:20}}></span>
+                </FormControl ><span style={{marginLeft:20}}></span>
             </FormGroup>
 
             <FormGroup controlId="formInlineGender">          
-                <FormControl  style ={{width:230}} componentClass="select" placeholder="Gender">
+                <FormControl   style ={{width:230}} componentClass="select" placeholder="Gender" onChange={this.handleChange.bind(this,'gender')}>
                   <option>Gender</option>
                   <option value="select">select</option>
                   <option value="other">...</option>
-                </FormControl><span style={{marginLeft:20}}></span>
+                </FormControl ><span style={{marginLeft:20}}></span>
             </FormGroup>
 
             <FormGroup controlId="formInlineDate">      

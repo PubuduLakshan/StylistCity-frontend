@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SearchList from './searchList';
+import axios from 'axios';
 
 export default class Search extends Component {
 
@@ -11,6 +12,19 @@ export default class Search extends Component {
   }
 
   componentDidMount(){
+    const searchedObj = this.props.location.state.redirectParams;
+    console.log(searchedObj);
+
+    axios.post('node server endpoint', {
+    searchedObj: searchedObj 
+    })
+    .then(function (response) {
+     console.log(response);
+     })
+   .catch(function (error) {
+    console.log(error);
+     });
+     return
       
   }
 
@@ -18,7 +32,6 @@ export default class Search extends Component {
 
     return (
       <div>
-        <h1>{this.props.location.state.params}</h1>
         <SearchList searchResults={this.state.searchResults}/>
       </div>
     )
