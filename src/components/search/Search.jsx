@@ -7,10 +7,17 @@ export default class Search extends Component {
   constructor(){
     super()
     this.state = {
-      searchResults: []
+      //searchResults: []
+      searchResults: {}
     }
   }
-
+//new
+  updateState(stylistList){
+    this.setState({
+      searchResults:stylistList
+    })
+  }
+//
   componentDidMount(){
     const searchedObj = this.props.location.state.redirectParams;
     console.log(searchedObj);
@@ -20,6 +27,9 @@ export default class Search extends Component {
     })
     .then(function (response) {
      console.log(response);
+     //new
+     this.updateState(response.data.data);
+     //
      })
    .catch(function (error) {
     console.log(error);
