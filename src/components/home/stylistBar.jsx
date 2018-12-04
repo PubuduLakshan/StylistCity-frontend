@@ -4,7 +4,22 @@ import StylistProfCard from "./stylistProfCard";
 import "./stylistBar.css";
 
 export default class StylistBar extends Component {
+
+
   render() {
+
+    var cardList = this.props.displayProfiledata
+    console.log(cardList);
+    
+    /*map((info)=> 
+        {console.log(info);
+        return(
+       <StylistProfCard info = {info}/>
+        )
+      }
+     
+    )*/
+
     return (
       <div className="stylistbar">
         
@@ -14,16 +29,7 @@ export default class StylistBar extends Component {
           <Grid>
           <Row className="show-grid">
             <Col xs={4} md={3}>
-              <StylistProfCard/>
-            </Col>
-            <Col xs={4} md={3}>
-              <StylistProfCard/>
-            </Col>
-            <Col xs={4} md={3}>
-              <StylistProfCard/>
-            </Col>
-            <Col xsHidden md={3}>
-              <StylistProfCard/>
+             <StylistProfCard/>
             </Col>
           </Row>
           </Grid>

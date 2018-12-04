@@ -7,6 +7,7 @@ import { DatePicker } from 'antd';
 
 import {Redirect} from 'react-router-dom';
 import "./home.css";
+import axios from 'axios';
 
 
 export default class Home extends Component {
@@ -21,6 +22,7 @@ export default class Home extends Component {
 
 
       },
+      updateStyleBar:{},
       isSubmitClicked: false
     }
   }
@@ -69,6 +71,20 @@ export default class Home extends Component {
   componentWillUnmount(){
     console.log('test')
     this.setState({isSubmitClicked: false})
+  }
+
+  componentDidMount(){
+    axios.get('http://localhost:8000/', {
+    })
+    .then((response) => {
+     console.log(response.data);
+     this.setState({updateStyleBar:response.data})
+     })
+   .catch(function (error) {
+    console.log(error);
+     });
+     return
+    
   }
 
 
@@ -129,7 +145,7 @@ export default class Home extends Component {
       </Grid>
       
       
-      <StylistBar/>
+      <StylistBar displayProfiledata={this.state.updateStyleBar}/>
 
       <div>
         <h2 className="howitworkshead">How it Works</h2>

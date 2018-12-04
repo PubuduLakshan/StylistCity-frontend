@@ -9,15 +9,15 @@ export default class stylistProfView extends Component {
                     
                 </div>
                 <div className="avatar">
-                    <Image alt="" src="assets/profile/profile1.jpg"/>
+                    <Image alt="" src={`assets/profile/profile1.jpg`}/>
                 </div>
                 <div className="info">
                     <div className="title">
-                        <h3>Mohommad Salah</h3>
+                        <h3>ddddd</h3>
                     </div>
-                    <div className="desc">Stylist</div>
-                    <div className="desc">Curious developer</div>
-                    <div className="desc">Tech geek</div>
+                    <div className="desc">dddd</div>
+                    <div className="desc">ddddd</div>
+                    
                 </div>
                 <div className="bottom" style={{marginBottom: 10}}>
                     <Button bsStyle = "default">Book Now!</Button>
