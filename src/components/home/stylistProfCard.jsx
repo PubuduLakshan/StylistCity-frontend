@@ -3,6 +3,8 @@ import {Image,Button} from 'react-bootstrap';
 import "./stylistProfCard.css";
 export default class stylistProfView extends Component {
   render() {
+
+    var info = this.props.homeStylist;
     return (
         <div className="card hovercard">
                 <div className="cardheader">
@@ -13,7 +15,7 @@ export default class stylistProfView extends Component {
                 </div>
                 <div className="info">
                     <div className="title">
-                        <h3>ddddd</h3>
+                        <h3>{info.firstName} {info.lastName}</h3>
                     </div>
                     <div className="desc">dddd</div>
                     <div className="desc">ddddd</div>

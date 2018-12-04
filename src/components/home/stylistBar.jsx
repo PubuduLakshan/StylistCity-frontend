@@ -8,8 +8,8 @@ export default class StylistBar extends Component {
 
   render() {
 
-    var cardList = this.props.displayProfiledata
-    console.log(cardList);
+   // var cardList = this.props.displayProfiledata
+    //console.log(cardList);
     
     /*map((info)=> 
         {console.log(info);
@@ -19,6 +19,15 @@ export default class StylistBar extends Component {
       }
      
     )*/
+    if(this.props.displayProfiledata && this.props.displayProfiledata.length > 0){
+    var homeStyle=this.props.displayProfiledata.map(homeStylist=>{
+      return(
+        <StylistProfCard homeStylist = {homeStylist}/>
+      )
+    })
+  }
+
+    
 
     return (
       <div className="stylistbar">
@@ -29,7 +38,7 @@ export default class StylistBar extends Component {
           <Grid>
           <Row className="show-grid">
             <Col xs={4} md={3}>
-             <StylistProfCard/>
+             {homeStyle}
             </Col>
           </Row>
           </Grid>
