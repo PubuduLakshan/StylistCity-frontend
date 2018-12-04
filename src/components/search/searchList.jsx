@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import{Grid,Col,Jumbotron,Row,Image} from 'react-bootstrap';
+import{Grid,Col,Jumbotron,Row,Image,ButtonToolbar,Button,ButtonGroup} from 'react-bootstrap';
 import SortingTabs from './sortTabs';
 import './searchList.css';
 //import SearchProfCard from './searchProfCard';
@@ -16,27 +16,36 @@ export default class SearchList extends Component {
         console.log(stylist);
         return(
           <li key={stylist.id}> <div className="container">
+          <Jumbotron>
           <Row>  
-              <Col md={3}>               
+              <Col md={4}>               
               <div className="image_inner_container">
                   <Image src={`assets/profile/${stylist.id}.jpg`} />
               </div>
               </Col > 
-              <Col md={3}> 
+              <Col md={4}> 
               <div>
-                  <h3>{stylist.firstName} {stylist.lastName}</h3>
+                  <h2 style={{fontWeight:"bold",fontFamily:"Time new roman",fontSize:45}}>{stylist.firstName} {stylist.lastName}</h2>
                   
-                  <h4>{stylist.type}</h4>
-                  <h4>{stylist.city}</h4>
+                  <h4>Category : {stylist.type}</h4>
+                  <h4>Location :{stylist.city}</h4>
               </div >
               </Col> 
-              <Col md={3}>
+              <Col md={4}>
               <div>
-  
+                  <h2 style={{marginTop:50}}>Book Now!</h2>
+                  <ButtonToolbar>
+                    <ButtonGroup bsSize="large">
+                      <Button bsStyle="primary"><div>FullDay</div><div>$100</div></Button>
+                      <Button bsStyle="primary"><div>Morning</div><div>$50</div></Button>
+                      <Button bsStyle="primary"><div>Evening</div><div>$80</div></Button>
+                    </ButtonGroup>
+                  </ButtonToolbar>
+                  <Button bsSize="large" bsStyle="info" style={{marginLeft:80,marginTop:20}}>View Profile</Button>
               </div>
               </Col>                  
              
-          </Row>    
+          </Row> </Jumbotron>   
         </div></li>
         )
         
