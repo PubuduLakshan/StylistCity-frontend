@@ -1,30 +1,32 @@
 import React, { Component } from 'react';
-import {Image,Button,Row} from 'react-bootstrap';
-import './searchProfCard.css';
+//import {Image,Button,Row} from 'react-bootstrap';
 
+import {Row,Image,Col} from "react-bootstrap";
+import './searchProfCard.css';
 
 export default class SearchProfCard extends Component {
   render() {
     return (
-        <div className="card hovercard">
-            <Row>
-            <div className="avatar">
-                <Image alt="" src="assets/profile/profile1.jpg"/>
+        <div className="container">
+        <Row>  
+            <Col md={3}>               
+            <div className="image_inner_container">
+                <Image src="assets/home/homeImg1.jpg" />
             </div>
-            <div className="info">
-                <div className="title">
-                    <h3>Mohommad Salah</h3>
-                </div>
-                <div className="desc">Stylist</div>
-                <div className="desc">Curious developer</div>
-                <div className="desc">Tech geek</div>
+            </Col > 
+            <Col md={3}> 
+            <div>
+                <h3>{this.props.stylist.firstName} {this.props.stylist.lastName}</h3>
+            </div >
+            </Col> 
+            <Col md={3}>
+            <div>
+
             </div>
-            <div className="bottom" style={{marginBottom: 10}}>
-                <Button bsStyle = "default">Book Now!</Button>
-            </div>
-            </Row>
-        
-        </div>
-    )
-  }
+            </Col>                  
+           
+        </Row>    
+	    </div>
+    )}
+  
 }

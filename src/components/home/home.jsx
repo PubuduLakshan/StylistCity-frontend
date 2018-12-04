@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 //import { Link } from "react-router-dom";
 import {Jumbotron,Grid,Image,Form,FormGroup,Button, FormControl } from "react-bootstrap";
 import StylistBar from "./stylistBar";
-import DatePickerFeild from "./datePicker";
+//import DatePickerFeild from "./datePicker";
+import { DatePicker } from 'antd';
+
 import {Redirect} from 'react-router-dom';
 import "./home.css";
 
@@ -12,7 +14,13 @@ export default class Home extends Component {
   constructor(){
     super()
     this.state = {
-      redirectParams: {},
+      redirectParams: {
+        category:"stylist",
+        location:"london",
+        gender:"female"
+
+
+      },
       isSubmitClicked: false
     }
   }
@@ -53,11 +61,19 @@ export default class Home extends Component {
     this.setState({redirectParams: {...this.state.redirectParams, [searchType] : e.target.value }} )
   }
 
+  handleDatePicker(pickerType,date,dateString){
+    console.log(pickerType + ' ' + dateString)
+    this.setState({redirectParams: {...this.state.redirectParams, [pickerType] : dateString }} )
+  }
 
+  componentWillUnmount(){
+    console.log('test')
+    this.setState({isSubmitClicked: false})
+  }
 
 
   render() {
-
+    //console.log("this.state.isSubmitClicked -> ", this.state.isSubmitClicked)
     if(this.state.isSubmitClicked){
       return <Redirect to={{
         pathname: "/search",
@@ -83,8 +99,7 @@ export default class Home extends Component {
         <h3 className="searchinstruction">Search Here</h3>
           <Form inline>
             <FormGroup controlId="formcategory" style={{marginLeft:20}} >       
-                <FormControl   style ={{width:230}} componentClass="select" placeholder="Category" onChange={this.handleChange.bind(this,'category')}>
-                  <option value ="category">Category</option>
+                <FormControl   style ={{width:230}} componentClass="select" placeholder="Category" defaultValue="stylist" onChange={this.handleChange.bind(this,'category')}>    
                   <option value="stylist">Stylist</option>
                   <option value="educator">Educator</option>
                 </FormControl ><span style={{marginLeft:20}}></span>
@@ -92,22 +107,20 @@ export default class Home extends Component {
 
             <FormGroup controlId="formlocation">
                 <FormControl   style ={{width:230}}componentClass="select" placeholder="Location" onChange={this.handleChange.bind(this,'location')}>
-                  <option>Location</option>
-                  <option value="stylist">Stylist</option>
-                  <option value="educator">Educator</option>
+                  <option value="london">London</option>
+                  <option value="TX">TX</option>
                 </FormControl ><span style={{marginLeft:20}}></span>
             </FormGroup>
 
             <FormGroup controlId="formInlineGender">          
                 <FormControl   style ={{width:230}} componentClass="select" placeholder="Gender" onChange={this.handleChange.bind(this,'gender')}>
-                  <option>Gender</option>
-                  <option value="select">select</option>
-                  <option value="other">...</option>
+                 
+                  <option value="female">Female</option>
+                  <option value="male">Male</option>
                 </FormControl ><span style={{marginLeft:20}}></span>
             </FormGroup>
-
-            <FormGroup controlId="formInlineDate">      
-              <DatePickerFeild bsStyle = "primary" onChange={this.handleChange}/><span style={{marginLeft:20}}></span>
+            <FormGroup controlId="formInlineDate"> 
+             <DatePicker  onChange={this.handleDatePicker.bind(this,'dateString')}/>
             </FormGroup>
            
             <Button type="button" bsStyle="default" onClick={this.testSubmit.bind(this)}>Search Now</Button>

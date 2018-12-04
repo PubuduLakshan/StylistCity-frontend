@@ -25,10 +25,10 @@ export default class Search extends Component {
     axios.post('http://localhost:8000/search', {
     searchedObj: searchedObj 
     })
-    .then(function (response) {
-     console.log(response);
+    .then((response) => {
+     console.log(response.data);
      //new
-     this.updateState(response.data.data);
+     this.updateState(response.data);
      //
      })
    .catch(function (error) {
