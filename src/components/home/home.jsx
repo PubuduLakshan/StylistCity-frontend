@@ -139,7 +139,7 @@ export default class Home extends Component {
              <DatePicker  onChange={this.handleDatePicker.bind(this,'dateString')}/>
             </FormGroup>
            
-            <Button type="button" bsStyle="default" onClick={this.testSubmit.bind(this)}>Search Now</Button>
+            <Button type="button" bsStyle="success" onClick={this.testSubmit.bind(this)}>Search Now</Button>
           </Form>
         </div>
       </Grid>

@@ -22,7 +22,9 @@ export default class StylistBar extends Component {
     if(this.props.displayProfiledata && this.props.displayProfiledata.length > 0){
     var homeStyle=this.props.displayProfiledata.map(homeStylist=>{
       return(
+        <Col xs={4} md={3}>
         <StylistProfCard homeStylist = {homeStylist}/>
+        </Col>
       )
     })
   }
@@ -37,9 +39,9 @@ export default class StylistBar extends Component {
         <hr />
           <Grid>
           <Row className="show-grid">
-            <Col xs={4} md={3}>
+            
              {homeStyle}
-            </Col>
+           
           </Row>
           </Grid>
        
