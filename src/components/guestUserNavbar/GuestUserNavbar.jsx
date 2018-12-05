@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { Navbar, Nav, NavItem,Grid} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './GuestUserNavbar.css'
 
@@ -8,17 +8,18 @@ export default class GuestUserNavbar extends Component {
  
   render() {
     return (
+      <Grid>
         <Navbar inverse collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
-            <Link to="/">StylistCity</Link>
+            <span><img alt="" src="assets/logo/logo.jpg" className="logoImage"/></span><span> </span>StylistCity
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>
-          <Nav pullRight>
+          <Nav pullRight style={{paddingRight:20}}>
             <NavItem eventKey={1} componentClass={Link} href="/" to="/">
-              <div style={{fontSize:20}}>CreateProfile <span style={{ marginLeft : 45 ,marginRight: 20}}>|</span></div>
+              <div style={{fontSize:15}}>CreateProfile <span style={{ marginLeft : 45 ,marginRight: 20}}>|</span></div>
             </NavItem>
             <NavItem eventKey={2} componentClass={Link} href="/" to="/">
               Home 
@@ -39,6 +40,7 @@ export default class GuestUserNavbar extends Component {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
+      </Grid>
     )
   }
 }

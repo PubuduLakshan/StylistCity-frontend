@@ -1,6 +1,7 @@
 nav.navbar, .navbar-default {
     background-color:transparent !important;
     font-weight: 500;
+    padding-right: 10px;
   
   }
   .navbar-default {
@@ -40,4 +41,10 @@ nav.navbar, .navbar-default {
 .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
   color: white;
   background-color: transparent;
+}
+.logoImage{
+  width: 45px;
+  height: 30px;
+  
+ 
 }

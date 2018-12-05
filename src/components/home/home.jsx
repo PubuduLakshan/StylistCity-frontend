@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import { Link } from "react-router-dom";
-import {Jumbotron,Grid,Image,Form,FormGroup,Button, FormControl } from "react-bootstrap";
+import {Jumbotron,Grid,Form,FormGroup,Button, FormControl,Carousel, Row,Col} from "react-bootstrap";
 import StylistBar from "./stylistBar";
 //import DatePickerFeild from "./datePicker";
 import { DatePicker } from 'antd';
@@ -99,59 +99,74 @@ export default class Home extends Component {
     } else
     return (
       <div>
-        
-        <Image src = "assets/home/homeImg1.jpg" fluid="true" alt="Responsive image"/>
-     
       <Grid>
-      
-        <Jumbotron className="jumboHome">
-        <div className="welcomehead">
-          <h1 className="welcome">Welcome to Stylist City</h1>
-          <h3 className="subwelcome">Best Place-Best Stylist</h3>
-        </div>
-        </Jumbotron>
+        <Carousel className="coverCarosal" fluid="true" >
+          <Carousel.Item className="coverImages">
+            <img  alt="" src="assets/home/home1.jpg" />
+          </Carousel.Item>
+          <Carousel.Item className="coverImages">
+            <img  alt="" src="assets/home/home2.jpg" />
+          </Carousel.Item>
+          <Carousel.Item className="coverImages">
+            <img  alt="" src="assets/home/home5.jpg" />
+          </Carousel.Item>
+        </Carousel>
         
-        <div className="searchForm">
-        <h3 className="searchinstruction">Search Here</h3>
-          <Form inline>
-            <FormGroup controlId="formcategory" style={{marginLeft:20}} >       
-                <FormControl   style ={{width:230}} componentClass="select" placeholder="Category" defaultValue="stylist" onChange={this.handleChange.bind(this,'category')}>    
-                  <option value="stylist">Stylist</option>
-                  <option value="educator">Educator</option>
-                </FormControl ><span style={{marginLeft:20}}></span>
-            </FormGroup>
-
-            <FormGroup controlId="formlocation">
-                <FormControl   style ={{width:230}}componentClass="select" placeholder="Location" onChange={this.handleChange.bind(this,'location')}>
-                  <option value="london">London</option>
-                  <option value="TX">TX</option>
-                </FormControl ><span style={{marginLeft:20}}></span>
-            </FormGroup>
-
-            <FormGroup controlId="formInlineGender">          
-                <FormControl   style ={{width:230}} componentClass="select" placeholder="Gender" onChange={this.handleChange.bind(this,'gender')}>
-                 
-                  <option value="female">Female</option>
-                  <option value="male">Male</option>
-                </FormControl ><span style={{marginLeft:20}}></span>
-            </FormGroup>
-            <FormGroup controlId="formInlineDate"> 
-             <DatePicker  onChange={this.handleDatePicker.bind(this,'dateString')}/>
-            </FormGroup>
-           
-            <Button type="button" bsStyle="success" onClick={this.testSubmit.bind(this)}>Search Now</Button>
-          </Form>
-        </div>
-      </Grid>
-      
-      
-      <StylistBar displayProfiledata={this.state.updateStyleBar}/>
-
-      <div>
-        <h2 className="howitworkshead">How it Works</h2>
-        <hr />
+     
         
-      </div>
+        
+          <Jumbotron className="jumboHome">
+          </Jumbotron>
+          <div className="welcomehead">
+            <h1 className="welcome">Welcome to Stylist City</h1>
+            <h3 className="subwelcome">Best Place-Best Stylist</h3>
+          </div>
+          
+          <div className="searchForm">
+          <h3 className="searchinstruction">Search Here</h3>
+          <Grid>
+          <Row className="searchTitle"><Col md={2} style={{marginLeft:5}}>Category</Col><Col  md={3} style={{marginLeft:56}}>City</Col><Col  md={3} style={{marginLeft:-43}}>Gender</Col><Col  md={3} style={{marginLeft:-43}}>Date</Col></Row>
+          </Grid>
+            <Form inline>
+              <FormGroup controlId="formcategory" style={{marginLeft:20}} >       
+                  <FormControl   style ={{width:230}} componentClass="select" placeholder="Category" defaultValue="stylist" onChange={this.handleChange.bind(this,'category')}>    
+                    <option value="stylist">Stylist</option>
+                    <option value="educator">Educator</option>
+                  </FormControl ><span style={{marginLeft:20}}></span>
+              </FormGroup>
+
+              <FormGroup controlId="formlocation">
+                  <FormControl   style ={{width:230}}componentClass="select" placeholder="Location" onChange={this.handleChange.bind(this,'location')}>
+                    <option value="london">London</option>
+                    <option value="TX">TX</option>
+                  </FormControl ><span style={{marginLeft:20}}></span>
+              </FormGroup>
+
+              <FormGroup controlId="formInlineGender">          
+                  <FormControl   style ={{width:230}} componentClass="select" placeholder="Gender" onChange={this.handleChange.bind(this,'gender')}>
+                  
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                  </FormControl ><span style={{marginLeft:20}}></span>
+              </FormGroup>
+              <FormGroup controlId="formInlineDate"> 
+              <DatePicker  onChange={this.handleDatePicker.bind(this,'dateString')}/>
+              </FormGroup>
+            
+              <Button type="button" bsStyle="primary" onClick={this.testSubmit.bind(this)}>Search Now</Button>
+            </Form>
+          </div>
+        
+        
+        <Row className="members">
+        <StylistBar displayProfiledata={this.state.updateStyleBar}/>
+        </Row>
+
+        <div>
+          <h2 className="howitworkshead">How it Works</h2>
+          <hr />   
+        </div>
+        </Grid>
       </div>
     )
   }

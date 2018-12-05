@@ -1,40 +1,65 @@
-.img-fluid{
-    width: 100%;
-    height: 600px;
-    margin-top: -180px;
+.coverImages{
+    align-content: center;
+    max-height: 640px;
+    
+}
+.coverCarosal{
+   
+    position: relative;
+    z-index: -1;
+    margin-top: -20px;
+    
+
 }
 .welcome{
+    position: relative;
     text-align: center;
     font-weight: 500;
+    font-size: 60px;
+    margin-top: -350px;
+    color: white;
+    z-index: 1;
     
 }
 .subwelcome{
+    position: relative;
     text-align: center;
+    color: rgb(228, 234, 240);
+    z-index: 1;
     
 }
 .searchForm{
-    margin-top: 80px;
-    
+    position: relative;
+    margin-top: 70px;
+    margin-left: 35px;
+    z-index: 1;
 }
 
 .searchinstruction{
     margin-left: 20px;
     margin-bottom: 10px;
+    color: white;
 }
 .jumboHome{
     position: relative;
-    margin-top: -420px;
-    color:black;
-    background-color: white;
+    margin-top: -480px;
+    width:100%;
+    height: 400px;
+    background-color:black;
     opacity: 0.45;
 }
-.howitworks{
-    margin-top: -20px;
-    margin-left: 10px;
-    margin-right: 10px;
-   
-}
+
 .howitworkshead{
-    margin-left: 100px;
+   
+    margin-left: 60px;
+
+    
+    
+}
+.searchTitle{
+    color: white;
+}
+.members{
+    margin-top: 120px;
     
 }
