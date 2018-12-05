@@ -23,11 +23,11 @@ export default class GuestUserNavbar extends Component {
             <NavItem eventKey={2} componentClass={Link} href="/" to="/">
               Home 
             </NavItem>
-            <NavItem eventKey={3} componentClass={Link} href="/search" to="/search">
+            <NavItem eventKey={3} componentClass={Link} href="/" to="/">
               Service
             </NavItem>
             
-            <NavItem eventKey={4} componentClass={Link} href="/profile" to="/profile">
+            <NavItem eventKey={4} componentClass={Link} href="/" to="/">
               About
             </NavItem>
             <NavItem eventKey={5} componentClass={Link} href="/" to="/">

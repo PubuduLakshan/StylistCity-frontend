@@ -20,14 +20,14 @@
     }
     
     .profileImage{
-        margin-top: -250px
+        margin-top: 200px
     }
     .profileName{
-        margin-top: -190px;
-        color: beige;
+        margin-top: 200px;
+        color: rgb(12, 12, 11);
     }
     .profileBook{
-        margin-top: -130px;
+        margin-top: 200px;
     }
     .profilejumbo{
         position : absolute;

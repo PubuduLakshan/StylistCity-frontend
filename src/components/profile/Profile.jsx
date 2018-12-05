@@ -2,11 +2,37 @@ import React, { Component } from 'react'
 import './profile.css';
 import {Grid,Image,Row,Col,Button,Jumbotron} from "react-bootstrap";
 import Calendar from 'react-calendar';
+import axios from 'axios';
  
 //import { Button } from 'antd/lib/radio';
 
 export default class Profile extends Component {
+  constructor(){
+    super();
+    this.state={profiledata:{}}
+  }
+  componentDidMount(){
+    axios.get('http://localhost:8000/profile/' + this.props.match.params.id, {
+    })
+    .then((response) => {
+     console.log(response.data);
+     this.setState({profiledata:response.data})
+     })
+   .catch(function (error) {
+    console.log(error);
+     });
+     return
+    
+  }
   render() {
+    
+    var profiledata  = this.state.profiledata;
+   
+    
+    
+    console.log(profiledata);
+    
+    
     return (
      <div>
         <Image src = "assets/home/homeImg1.jpg" className="img-fluid" alt="Responsive image" />
@@ -17,14 +43,14 @@ export default class Profile extends Component {
               <Col md={4}>
               <div className="profileImage">
               <div className="avatar">
-              <Image alt="" src="assets/profile/1.jpg"/>
+              <Image alt="" src={`assets/profile/1.jpg`}/>
               </div>
               </div>
               </Col>
 
               <Col md={4}>
               <div className="profileName">
-              <h1>Name</h1>
+              <h1>{profiledata.firstName} {profiledata.lastName} </h1>
               </div>
               </Col>
               <Col md ={4}>
@@ -48,7 +74,10 @@ export default class Profile extends Component {
               </Col>
               
               <Col md={3}>
-              <p></p>
+              <h4>{profiledata.type} </h4>
+              <h4>{profiledata.city} </h4>
+              <h4>{profiledata.gender} </h4>
+              <h4>{profiledata.type} </h4>
               </Col>
 
               </div>

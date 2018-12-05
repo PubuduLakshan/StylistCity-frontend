@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Image,Button} from 'react-bootstrap';
 import "./stylistProfCard.css";
+import { Link } from 'react-router-dom';
 export default class stylistProfView extends Component {
   render() {
 
@@ -22,7 +23,11 @@ export default class stylistProfView extends Component {
                     
                 </div>
                 <div className="bottom" style={{marginBottom: 10}}>
-                <Button bsStyle = "info">View Profile</Button><Button bsStyle = "warning">Book Now!</Button>
+                 
+                    
+                <Link to ={`/profile/${info.id}`}><Button>View Profile</Button></Link>
+
+                <Button bsStyle = "warning">Book Now!</Button>
                 </div>
                 
             </div>

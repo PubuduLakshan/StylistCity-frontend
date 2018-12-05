@@ -100,7 +100,7 @@ export default class Home extends Component {
     return (
       <div>
         
-        <Image src = "assets/home/homeImg1.jpg" className="img-fluid" alt="Responsive image"/>
+        <Image src = "assets/home/homeImg1.jpg" fluid="true" alt="Responsive image"/>
      
       <Grid>
       

@@ -16,7 +16,7 @@ class App extends Component {
          <Navbar/> 
           <Route path="/" exact component={Home}/>
           <Route path="/search" exact component={Search}/>
-          <Route path="/profile" exact component={Profile}/>
+          <Route path="/profile/:id" exact component={Profile}/>
         </div>
        
       </Router>
