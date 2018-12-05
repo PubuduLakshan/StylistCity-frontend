@@ -1,0 +1,43 @@
+
+.avatar img {
+
+    width: 350px;
+    
+    height: 350px;
+    
+    max-width: 350px;
+    
+    max-height: 350px;
+    
+    -webkit-border-radius: 50%;
+    
+    -moz-border-radius: 50%;
+    
+    border-radius: 50%;
+    
+    border: 5px solid rgba(255,255,255,0.5);
+    
+    }
+    
+    .profileImage{
+        margin-top: -250px
+    }
+    .profileName{
+        margin-top: -190px;
+        color: beige;
+    }
+    .profileBook{
+        margin-top: -130px;
+    }
+    .profilejumbo{
+        position : absolute;
+        z-index: 1;
+        height: 300px;
+        margin-top: 250px;
+       
+    }
+    .calenderView{
+        margin:20px;
+        margin-left: 40px;
+    }
+    
