@@ -63,6 +63,10 @@ export default class Profile extends Component {
               </Col>
               <h3>My Works</h3>
               <hr />
+              <Row></Row>
+              <h3>Reviews</h3>
+              <hr />
+              
           </Grid>  
      </div>
     )
