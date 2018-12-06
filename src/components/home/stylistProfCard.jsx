@@ -27,7 +27,7 @@ export default class stylistProfView extends Component {
                     
                 <Link to ={`/profile/${info.id}`}><Button>View Profile</Button></Link>
 
-                <Button bsStyle = "warning">Book Now!</Button>
+                <Button bsStyle = "success" style={{marginLeft:5}}>Book Now!</Button>
                 </div>
                 
             </div>

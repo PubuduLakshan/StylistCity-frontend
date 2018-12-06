@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import './profile.css';
-import {Grid,Image,Row,Col,Button,Jumbotron} from "react-bootstrap";
+import {Grid,Row,Col,Button,Jumbotron,ButtonToolbar,ButtonGroup,Image} from "react-bootstrap";
 import Calendar from 'react-calendar';
+import MyWorks from './myWorks'
 import axios from 'axios';
  
 //import { Button } from 'antd/lib/radio';
@@ -10,6 +11,7 @@ export default class Profile extends Component {
   constructor(){
     super();
     this.state={profiledata:{}}
+    
   }
   componentDidMount(){
     axios.get('http://localhost:8000/profile/' + this.props.match.params.id, {
@@ -26,25 +28,35 @@ export default class Profile extends Component {
   }
   render() {
     
-    var profiledata  = this.state.profiledata;
-   
+    var profiledata  = this.state.profiledata;    
+    console.log(profiledata.Images && profiledata.Images[0]);
     
     
-    console.log(profiledata);
-    
+
+    if(profiledata.Images && profiledata.Images.length > 0){
+      
+      var ImageLocation=profiledata.Images.map(imageLocation=>{
+        console.log(imageLocation.id);
+        return(<MyWorks ImageLocationId={imageLocation.id}/>)
+
+      })
+      
+      
+    }
     
     return (
      <div>
-        <Image src = "assets/home/homeImg1.jpg" className="img-fluid" alt="Responsive image" />
+        <Grid>
+        <Image src = {`/assets/home/home${profiledata.id}.jpg`} className="coverImage" alt="Responsive image" />
         <Jumbotron className="profilejumbo"></Jumbotron>
         
-          <Grid>
+         
             <Row className="profileHead">
               <Col md={4}>
               <div className="profileImage">
-              <div className="avatar">
-              <Image alt="" src={`assets/profile/1.jpg`}/>
-              </div>
+                <div className="avatar">
+                <img  src={"/assets/profile/1.jpg"} alt=""/>
+                </div>
               </div>
               </Col>
 
@@ -55,7 +67,13 @@ export default class Profile extends Component {
               </Col>
               <Col md ={4}>
               <div className="profileBook">
-              <Button bsSize="large" bsStyle="success">Book Now</Button>
+                <ButtonToolbar>
+                    <ButtonGroup bsSize="large">
+                      <Button bsStyle="success"><div>FullDay</div><div>$100</div></Button>
+                      <Button bsStyle="success"><div>Morning</div><div>$50</div></Button>
+                      <Button bsStyle="success"><div>Evening</div><div>$80</div></Button>
+                    </ButtonGroup>
+                </ButtonToolbar>
               </div>
               </Col>
            
@@ -76,8 +94,9 @@ export default class Profile extends Component {
               <Col md={3}>
               <h4>{profiledata.type} </h4>
               <h4>{profiledata.city} </h4>
-              <h4>{profiledata.gender} </h4>
-              <h4>{profiledata.type} </h4>
+              <h4>{profiledata.country} </h4>
+              <h4>{profiledata.Skills && profiledata.Skills[0].level} </h4>
+              <h4>{profiledata.Qualifications && profiledata.Qualifications[0].title},{profiledata.Qualifications && profiledata.Qualifications[0].institute}</h4>
               </Col>
 
               </div>
@@ -92,7 +111,10 @@ export default class Profile extends Component {
               </Col>
               <h3>My Works</h3>
               <hr />
-              <Row></Row>
+              <Row>
+              <Col><div className="myworks"> {ImageLocation}</div></Col>
+
+              </Row>
               <h3>Reviews</h3>
               <hr />
               
@@ -100,4 +122,4 @@ export default class Profile extends Component {
      </div>
     )
   }
-}
+  }
