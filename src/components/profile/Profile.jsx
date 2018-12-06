@@ -37,7 +37,7 @@ export default class Profile extends Component {
       
       var ImageLocation=profiledata.Images.map(imageLocation=>{
         console.log(imageLocation.id);
-        return(<MyWorks ImageLocationId={imageLocation.id}/>)
+        return(<MyWorks ImageLocationId={imageLocation.id} key={imageLocation.id}/>)
 
       })
       

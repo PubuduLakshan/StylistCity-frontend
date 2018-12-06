@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Grid,Row,Col,Image} from 'react-bootstrap';
+import {Image} from 'react-bootstrap';
 
 export default class MyWorks extends Component {
 
