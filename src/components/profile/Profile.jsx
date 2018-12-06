@@ -47,7 +47,7 @@ export default class Profile extends Component {
     return (
      <div>
         <Grid>
-        <Image src = {`/assets/home/home${profiledata.id}.jpg`} className="coverImage" alt="Responsive image" />
+        <Image src = {`/assets/coverphoto/cover${profiledata.id}.jpg`} className="coverImage" alt="Responsive image" />
         <Jumbotron className="profilejumbo"></Jumbotron>
         
          
@@ -55,7 +55,7 @@ export default class Profile extends Component {
               <Col md={4}>
               <div className="profileImage">
                 <div className="avatar">
-                <img  src={"/assets/profile/1.jpg"} alt=""/>
+                <img  src={`/assets/profile/${profiledata.id}.jpg`} alt=""/>
                 </div>
               </div>
               </Col>
@@ -69,9 +69,9 @@ export default class Profile extends Component {
               <div className="profileBook">
                 <ButtonToolbar>
                     <ButtonGroup bsSize="large">
-                      <Button bsStyle="success"><div>FullDay</div><div>$100</div></Button>
-                      <Button bsStyle="success"><div>Morning</div><div>$50</div></Button>
-                      <Button bsStyle="success"><div>Evening</div><div>$80</div></Button>
+                      <Button bsStyle="success"><div>FullDay</div><div>${profiledata.charge && profiledata.charge.fullDay}</div></Button>
+                      <Button bsStyle="success"><div>Morning</div><div>${profiledata.charge && profiledata.charge.morning}</div></Button>
+                      <Button bsStyle="success"><div>Evening</div><div>${profiledata.charge && profiledata.charge.afternoon}</div></Button>
                     </ButtonGroup>
                 </ButtonToolbar>
               </div>

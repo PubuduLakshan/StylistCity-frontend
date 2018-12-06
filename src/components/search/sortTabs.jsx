@@ -14,17 +14,21 @@ export default class SortingTabs extends Component {
     }
   
     handleSelect(key) {
-      alert(`selected ${key}`);
+      //alert(`selected ${key}`);
       this.setState({ key });
+
     }
+    componentDidMount(){
+
+    }
+
   
     render() {
       return (
         <Tabs
           activeKey={this.state.key}
           onSelect={this.handleSelect}
-          id="controlled-tab-example"
-        >
+          id="controlled-tab-example">
           <Tab eventKey={1} title="Rating">
            
           </Tab>
