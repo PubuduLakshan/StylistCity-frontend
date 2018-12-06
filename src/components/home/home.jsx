@@ -98,7 +98,7 @@ export default class Home extends Component {
       />
     } else
     return (
-      <div>
+      <div >
       <Grid>
         <Carousel className="coverCarosal" fluid="true" >
           <Carousel.Item className="coverImages">
@@ -118,8 +118,8 @@ export default class Home extends Component {
           <Jumbotron className="jumboHome">
           </Jumbotron>
           <div className="welcomehead">
-            <h1 className="welcome">Welcome to Stylist City</h1>
-            <h3 className="subwelcome">Best Place-Best Stylist</h3>
+            <h1 className="welcome">Welcome to City of Stylists</h1>
+            <h3 className="subwelcome">Best Place-Best Stylists</h3>
           </div>
           
           <div className="searchForm">

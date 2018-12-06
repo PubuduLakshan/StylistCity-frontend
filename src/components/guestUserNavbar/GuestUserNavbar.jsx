@@ -12,7 +12,7 @@ export default class GuestUserNavbar extends Component {
         <Navbar inverse collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
-            <span><img alt="" src="assets/logo/logo.jpg" className="logoImage"/></span><span> </span>StylistCity
+            <span><img alt="" src="assets/logo/logo2.png" className="logoImage"/></span><span> </span>City of Stylists
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
