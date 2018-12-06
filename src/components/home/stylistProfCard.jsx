@@ -8,7 +8,7 @@ export default class stylistProfView extends Component {
     var info = this.props.homeStylist;
     return (
         <div className="card hovercard">
-                <div className="cardheader">
+                <div className="cardheader" style={{backgroundImage: `url(/assets/coverphoto/cover${info.id}.jpg)`}}>
                     
                 </div>
                 <div className="avatar">

@@ -57,7 +57,9 @@ export default class SearchList extends Component {
       <div>
         <Grid>
             <Col md={4}>
+            <div className="advSearch">
             <AdvancedSearch/>
+            </div>
             </Col>
 
             <Col md={8}>
