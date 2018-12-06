@@ -116,7 +116,7 @@
 }
 
 .card.hovercard .cardheader {
-    background:url("../../coverphoto/cover.jpg");
+   background: url('');
     background-size: cover;
     height: 135px;
 }
