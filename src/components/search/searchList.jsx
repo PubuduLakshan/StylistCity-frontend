@@ -15,31 +15,47 @@ export default class SearchList extends Component {
 
    
     this.state = {
-      key: 1
+      key: 0
     };
   }
 
   handleSelect(key) {
     //alert(`selected ${key}`);
+    console.log('key  - ' + key)
     this.setState({ key });
-    console.log( this.props.key);
+    
    
 
   }
-  componentDidMount(){
+ /*componentDidMount(){
     if(this.state.key===2){
-      console.log("gdyguy8g"+ this.state.key);
+    
       
     }
 
-  }
+  }*/
 
   render() {
     //new
     console.log(this.props.searchResults);
+    let stylistList = []
+
+    
+
     if(this.props.searchResults && this.props.searchResults.length > 0){
-      var stylistList  = this.props.searchResults.map(stylist=>{
-        console.log(stylist);
+      stylistList = [...this.props.searchResults]
+      if (this.state.key === 2){
+        stylistList.sort(function(a,b){return b.charge.fullDay-a.charge.fullDay});
+      }
+      if (this.state.key === 3){
+        stylistList.sort(function(b,a){return b.charge.fullDay-a.charge.fullDay});
+      }
+      if (this.state.key === 1){
+        stylistList.sort(function(b,a){return a.ratingstar.ratings-b.ratingstar.ratings});
+      }
+
+      stylistList  = stylistList.map(stylist=>{
+        //console.log(stylist);
         return(
           <div key={stylist.id}> <div>
           <Jumbotron>
@@ -52,7 +68,7 @@ export default class SearchList extends Component {
               <Col md={4}> 
               <div>
                   <h2 style={{fontWeight:"bold",paddingTop:20}}>{stylist.firstName} {stylist.lastName}</h2>
-                  
+                  <h5>Rating : {stylist.ratingstar && stylist.ratingstar.ratings}</h5>
                   <h5>Category : {stylist.type}</h5>
                   <h5>Location :{stylist.city}</h5>
               </div >
@@ -97,10 +113,10 @@ export default class SearchList extends Component {
                 <Tab eventKey={1} title="Rating">
                 
                 </Tab>
-                <Tab eventKey={2} title="Rates">
+                <Tab eventKey={2} title="HighestRate">
                 
                 </Tab>
-                <Tab eventKey={3} title="Popular">
+                <Tab eventKey={3} title="LowestRate">
                 
                 </Tab>
                 <Tab eventKey={4} title="Location">

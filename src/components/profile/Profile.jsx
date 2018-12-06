@@ -84,6 +84,7 @@ export default class Profile extends Component {
               <hr />
               
               <Col md={3}>
+              <h4>Rating:</h4>
               <h4>Category:</h4>
               <h4>Location:</h4>
               <h4>Gender:</h4>
@@ -92,6 +93,7 @@ export default class Profile extends Component {
               </Col>
               
               <Col md={3}>
+              <h4>{profiledata.ratingstar && profiledata.ratingstar.ratings}</h4>
               <h4>{profiledata.type} </h4>
               <h4>{profiledata.city} </h4>
               <h4>{profiledata.country} </h4>
