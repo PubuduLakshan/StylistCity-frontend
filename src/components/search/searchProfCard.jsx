@@ -7,9 +7,9 @@ import './searchProfCard.css';
 export default class SearchProfCard extends Component {
   render() {
     return (
-        <div className="container">
+        <Grid>
         <Row>  
-            <Col md={3}>               
+            <Col md={2}>               
             <div className="image_inner_container">
                 <Image src="assets/home/homeImg1.jpg" />
             </div>
@@ -26,7 +26,7 @@ export default class SearchProfCard extends Component {
             </Col>                  
            
         </Row>    
-	    </div>
+	    </Grid>
     )}
   
 }

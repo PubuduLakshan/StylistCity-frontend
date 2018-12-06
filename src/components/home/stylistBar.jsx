@@ -23,7 +23,7 @@ export default class StylistBar extends Component {
     var homeStyle=this.props.displayProfiledata.map(homeStylist=>{
       return(
         <Col xs={4} md={3}>
-        <StylistProfCard homeStylist = {homeStylist} key={homeStyle.id}/>
+        <StylistProfCard homeStylist = {homeStylist}/>
         </Col>
       )
     })

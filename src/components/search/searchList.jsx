@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import{Grid,Col,Jumbotron,Row,Image,ButtonToolbar,Button,ButtonGroup} from 'react-bootstrap';
 import SortingTabs from './sortTabs';
+import AdvancedSearch from './advancedSearch';
 import './searchList.css';
 //import SearchProfCard from './searchProfCard';
 //import SearchProfCard from './searchProfCard';
@@ -15,7 +16,7 @@ export default class SearchList extends Component {
       var stylistList  = this.props.searchResults.map(stylist=>{
         console.log(stylist);
         return(
-          <li key={stylist.id}> <div className="container">
+          <div key={stylist.id}> <div>
           <Jumbotron>
           <Row>  
               <Col md={4}>               
@@ -25,28 +26,28 @@ export default class SearchList extends Component {
               </Col > 
               <Col md={4}> 
               <div>
-                  <h2 style={{fontWeight:"bold",fontFamily:"Time new roman",fontSize:45}}>{stylist.firstName} {stylist.lastName}</h2>
+                  <h2 style={{fontWeight:"bold",fontFamily:"Time new roman",paddingTop:20}}>{stylist.firstName} {stylist.lastName}</h2>
                   
-                  <h4>Category : {stylist.type}</h4>
-                  <h4>Location :{stylist.city}</h4>
+                  <h5>Category : {stylist.type}</h5>
+                  <h5>Location :{stylist.city}</h5>
               </div >
               </Col> 
               <Col md={4}>
               <div>
-                  <h2 style={{marginTop:50}}>Book Now!</h2>
+                  <h3 style={{marginTop:50,color:"red"}}>Book Now!</h3>
                   <ButtonToolbar>
-                    <ButtonGroup bsSize="large">
-                      <Button bsStyle="primary"><div>FullDay</div><div>$100</div></Button>
-                      <Button bsStyle="primary"><div>Morning</div><div>$50</div></Button>
-                      <Button bsStyle="primary"><div>Evening</div><div>$80</div></Button>
+                    <ButtonGroup bsSize="xsmall">
+                      <Button bsStyle="success"><div>FullDay</div><div>$100</div></Button>
+                      <Button bsStyle="success"><div>Morning</div><div>$50</div></Button>
+                      <Button bsStyle="success"><div>Evening</div><div>$80</div></Button>
                     </ButtonGroup>
                   </ButtonToolbar>
-                  <Button bsSize="large" bsStyle="info" style={{marginLeft:80,marginTop:20}}>View Profile</Button>
+                  <Button bsSize="small" bsStyle="default" style={{marginLeft:40,marginTop:20}}>View Profile</Button>
               </div>
               </Col>                  
              
           </Row> </Jumbotron>   
-        </div></li>
+        </div></div>
         )
         
       })
@@ -55,12 +56,12 @@ export default class SearchList extends Component {
     return (
       <div>
         <Grid>
-            <Col xs={6} md={2}>
-            <Jumbotron></Jumbotron>
+            <Col md={4}>
+            <AdvancedSearch/>
             </Col>
 
-            <Col xs={14} md={10}>
-            <h4>sort by :</h4><SortingTabs/>
+            <Col md={8}>
+            <h3>sort by :</h3><SortingTabs/>
             <>
             {stylistList}
             </>
