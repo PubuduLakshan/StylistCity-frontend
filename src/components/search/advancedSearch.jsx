@@ -3,6 +3,7 @@ import {Jumbotron,Button,Grid,Row,Col} from 'react-bootstrap';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import {Redirect} from 'react-router-dom';
+import InputRange from 'react-input-range';
 //import { Button } from 'antd';
 
 export default class AdvancedSearch extends Component {
@@ -14,7 +15,8 @@ export default class AdvancedSearch extends Component {
         startDate:new Date(),
         endDate:new Date()},
         isSubmitClicked : false,
-        updateSearchList:{}
+        updateSearchList:{},
+        range:14
     };
    
   }
@@ -50,8 +52,10 @@ export default class AdvancedSearch extends Component {
     }else
     return (
       <div>
+        <Jumbotron>
         <h3>Advance Search</h3>
-        <Jumbotron></Jumbotron>
+        <hr />
+        
         <div className="advSearchBody">
         <h4>Search by Dates</h4>
         
@@ -65,10 +69,17 @@ export default class AdvancedSearch extends Component {
             <h5>To</h5>
 
             <DatePicker onChange={this.handleChange.bind(this,'endDate')}/>
-           
+            
+            <h4>Search by Rates</h4>
+            <InputRange
+              maxValue={20}
+              minValue={0}
+              value={this.state.range}
+             />
         
         </div>
-        <Button onClick={this.testSubmit.bind(this)} style={{marginTop:5}}>Search Again</Button>
+        <Button bsStyle="primary" onClick={this.testSubmit.bind(this)} style={{marginTop:10}}>Search Again</Button>
+        </Jumbotron>
       </div>
     )
     }
