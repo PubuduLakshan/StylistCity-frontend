@@ -8,7 +8,7 @@ export default class GuestUserNavbar extends Component {
  
   render() {
     return (
-      <Grid>
+      
         <Navbar inverse collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
@@ -40,7 +40,7 @@ export default class GuestUserNavbar extends Component {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      </Grid>
+      
     )
   }
 }

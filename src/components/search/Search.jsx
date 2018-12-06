@@ -18,7 +18,8 @@ export default class Search extends Component {
     })
   }
 //
-  componentDidMount(){
+ 
+/*................................ componentDidMount(){
     const searchedObj = this.props.location.state.redirectParams;
     console.log(searchedObj);
 
@@ -36,7 +37,7 @@ export default class Search extends Component {
      });
      return
       
-  }
+  }>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
   render() {
 

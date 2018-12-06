@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 //import {Image,Button,Row} from 'react-bootstrap';
 
-import {Row,Image,Col} from "react-bootstrap";
+import {Row,Image,Col,Grid} from "react-bootstrap";
 import './searchProfCard.css';
 
 export default class SearchProfCard extends Component {

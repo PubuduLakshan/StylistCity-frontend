@@ -105,7 +105,7 @@ export default class SearchList extends Component {
             </Col>
 
             <Col md={8}>
-            <h3>sort by :</h3>
+            <h3>Sort by :</h3>
               <Tabs
                 activeKey={this.state.key}
                 onSelect={this.handleSelect.bind(this)}
