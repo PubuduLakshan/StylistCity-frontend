@@ -12,8 +12,8 @@ export default class AdvancedSearch extends Component {
     super();
     this.state = {
       searchDates:{
-        startDate:new Date(),
-        endDate:new Date()},
+        startDate:new Date().getDate(),
+        endDate:new Date().getDate()},
         isSubmitClicked : false,
         updateSearchList:{},
         range:14
@@ -26,11 +26,12 @@ export default class AdvancedSearch extends Component {
 
   handleChange(searchType,data) {
     console.log(data);
+    alert(data);
     
     this.setState({searchDates: {...this.state.searchDates, [searchType] : data }} )
   }
- /*>>>>>>>>> componentDidMount(){
-    axios.get('http://localhost:8000/advancesearch', {
+ //componentDidMount(){
+   /* axios.get('http://localhost:8000/advancesearch', {
     })
     .then((response) => {
      console.log(response.data);
@@ -39,17 +40,19 @@ export default class AdvancedSearch extends Component {
    .catch(function (error) {
     console.log(error);
      });
-     return
+     return*/
     
-  }<<<<*/
+ // }
   render() {
     if(this.state.isSubmitClicked){
       return <Redirect to={{
-        pathname: "/advancesearch",
+        pathname: "/search",
         state: { searchDates: this.state.searchDates }
       }}
       />
-    }else
+    }
+    
+    else
     return (
       <div>
         <Jumbotron>

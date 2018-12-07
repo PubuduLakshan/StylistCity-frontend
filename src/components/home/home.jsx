@@ -125,7 +125,7 @@ export default class Home extends Component {
           <div className="searchForm">
           <h3 className="searchinstruction">Search Here</h3>
           <Grid>
-          <Row className="searchTitle"><Col md={2} style={{marginLeft:5}}>Category</Col><Col  md={3} style={{marginLeft:56}}>City</Col><Col  md={3} style={{marginLeft:-43}}>Gender</Col><Col  md={3} style={{marginLeft:-43}}>Date</Col></Row>
+          <Row className="searchTitle"><Col md={2} style={{marginLeft:5}}>Category</Col><Col  md={3} style={{marginLeft:56}}>City</Col><Col  md={3} style={{marginLeft:-43}}>Gender</Col><Col  md={3} style={{marginLeft:-43}}></Col></Row>
           </Grid>
             <Form inline>
               <FormGroup controlId="formcategory" style={{marginLeft:20}} >       
@@ -149,9 +149,7 @@ export default class Home extends Component {
                     <option value="male">Male</option>
                   </FormControl ><span style={{marginLeft:20}}></span>
               </FormGroup>
-              <FormGroup controlId="formInlineDate"> 
-              <DatePicker  onChange={this.handleDatePicker.bind(this,'dateString')}/>
-              </FormGroup>
+              
             
               <Button type="button" bsStyle="primary" onClick={this.testSubmit.bind(this)}>Search Now</Button>
             </Form>
