@@ -117,8 +117,11 @@ export default class Profile extends Component {
               <Col><div className="myworks"> {ImageLocation}</div></Col>
 
               </Row>
-              <h3>Reviews</h3>
+              <h3>About</h3>
               <hr />
+              <Row>
+              <Col><div className="aboutme"><h6></h6>{profiledata.about} </div></Col>
+              </Row>
               
           </Grid>  
      </div>
